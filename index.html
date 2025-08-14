@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Limulus Cam-Tag · IMX678 + T-Beam S3</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff; --text:#111; --muted:#5a6370;
+  --line:#e9ecef; --card:#f8f9fb; --accent:#111;
+}
+*{box-sizing:border-box} html,body{height:100%}
+body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial;color:var(--text);background:var(--bg);line-height:1.55}
+a{color:var(--text);text-decoration:none}
+.header{
+  position:fixed; inset:0 0 auto 0; z-index:20; display:flex; align-items:center; justify-content:space-between; gap:16px;
+  padding:14px 28px; background:rgba(255,255,255,.85); backdrop-filter:saturate(140%) blur(10px); border-bottom:1px solid var(--line);
+}
+.brand{font-weight:600; letter-spacing:.2px}
+.nav a{margin:0 12px;color:#3b3f45}
+.nav a.active,.nav a:hover{color:var(--accent)}
+.lang{display:flex; gap:8px}
+.lang button{border:1px solid var(--line); background:#fff; color:#111; padding:6px 10px; border-radius:10px; font-weight:600; cursor:pointer}
+.lang button.active{background:#111;color:#fff;border-color:#111}
+.hero{position:relative; height:100vh; width:100vw; overflow:hidden; border-bottom:1px solid var(--line)}
+.hero video{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
+.hero::after{content:""; position:absolute; inset:0; background:radial-gradient(80% 70% at 50% 60%, rgba(255,255,255,0) 0, rgba(255,255,255,.4) 100%)}
+.hero-content{position:absolute; inset:0; display:grid; place-items:center; text-align:center; padding:0 6vw; z-index:2}
+.hero h1{font-size:clamp(32px,6vw,64px); margin:0 0 .25em}
+.hero p{font-size:clamp(16px,2vw,20px); color:var(--muted); max-width:880px; margin:0 auto 18px}
+.btn{display:inline-flex; align-items:center; gap:8px; padding:12px 16px; border-radius:12px; border:1px solid var(--line); background:#fff; color:#111; font-weight:600}
+.btn.primary{background:#111; color:#fff; border-color:#111}
+.section{padding:96px 6vw; max-width:1200px; margin:0 auto}
+.section h2{font-weight:600; font-size:clamp(22px,3vw,36px); margin:0 0 10px}
+.section p.lead{color:var(--muted); margin:0 0 28px}
+.kv{border:1px solid var(--line); border-radius:16px; overflow:hidden; background:#fff}
+.kv img{width:100%; height:auto; display:block; max-height:70vh; object-fit:contain}
+.grid{display:grid; gap:18px}
+@media (min-width:900px){ .grid.cols-3{grid-template-columns:repeat(3,1fr)} .grid.cols-2{grid-template-columns:repeat(2,1fr)}}
+.card{
+  background:#fff; border:1px solid var(--line); border-radius:16px; padding:18px; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.card:hover{transform:translateY(-3px); box-shadow:0 10px 30px rgba(0,0,0,.06); border-color:#dde2e7}
+.card img,.card video{width:100%; height:auto; border-radius:12px; background:#000}
+.clickable{cursor:pointer}
+.hr{height:1px; background:var(--line); margin:30px 0}
+.reveal{opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease}
+.reveal.show{opacity:1; transform:none}
+.credits{display:flex; gap:40px; flex-wrap:wrap; justify-content:center; align-items:center}
+.credits a{display:inline-flex; align-items:center; justify-content:center; padding:14px 18px; border:1px solid var(--line); border-radius:12px; background:#fff; transition:transform .2s}
+.credits a:hover{transform:translateY(-2px)}
+.credits img{max-height:54px; width:auto}
+.footer{padding:40px 6vw; color:var(--muted); border-top:1px solid var(--line); text-align:center}
+/* Lightbox */
+.lightbox{position:fixed; inset:0; background:rgba(0,0,0,.85); display:flex; align-items:center; justify-content:center; visibility:hidden; opacity:0; transition:.3s}
+.lightbox.show{visibility:visible; opacity:1}
+.lightbox-content{max-width:90%; max-height:90%; border-radius:12px; background:#000}
+.lightbox-content img, .lightbox-content video{width:100%; height:auto; display:block}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="brand" data-i="brand">Limulus Cam-Tag</div>
+  <nav class="nav">
+    <a href="#overview" class="active" data-i="nav_overview">Proyecto</a>
+    <a href="#components" data-i="nav_components">Componentes</a>
+    <a href="#videos" data-i="nav_videos">Vídeos</a>
+    <a href="#assembly" data-i="nav_assembly">Despiece</a>
+    <a href="#credits" data-i="nav_credits">Créditos</a>
+  </nav>
+  <div class="lang">
+    <button id="lang-es" class="active">ES</button>
+    <button id="lang-en">EN</button>
+  </div>
+</header>
+
+<section class="hero" id="hero">
+  <video src="assets/hero-rotation.mp4" autoplay muted playsinline loop></video>
+  <div class="hero-content">
+    <h1 data-i="hero_title">Marca de ventosas para cetáceos</h1>
+    <p data-i="hero_sub">Sistema no invasivo con cámara 4K Sony IMX678, LilyGO T-Beam S3 Supreme, sensores y carcasa BlueRobotics 3".</p>
+    <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap">
+      <a href="#components" class="btn primary" data-i="hero_cta_primary">Explorar componentes</a>
+      <a href="#videos" class="btn" data-i="hero_cta_secondary">Ver vídeos</a>
+    </div>
+  </div>
+</section>
+
+<section class="section reveal" id="overview">
+  <h2 data-i="ov_title">Descripción del proyecto</h2>
+  <p class="lead" data-i="ov_lead">
+    Sistema avanzado para la monitorización no invasiva de cetáceos con sensores de profundidad, aceleración y temperatura, transmisión LoRa y diseño optimizado junto a CIRCE. Licencia Creative Commons para fomentar ciencia abierta.
+  </p>
+
+  <!-- Bloque de texto multilínea (rellenado por i18n) -->
+  <div class="card" style="padding:18px">
+    <div id="ov_body" style="display:grid; gap:.6em"></div>
+  </div>
+
+  <div class="kv" style="margin-top:18px"><img src="assets/explosion.jpg" alt="Exploded overview"></div>
+  <div class="hr"></div>
+  <div class="grid cols-3">
+    <a href="#comp-camera" class="card clickable"><h3 data-i="card_cam_title">IMX678 4K</h3><p data-i="card_cam_txt">Cámara 4K · 60 fps.</p></a>
+    <a href="#comp-tbeam" class="card clickable"><h3 data-i="card_board_title">T-Beam S3 Supreme</h3><p data-i="card_board_txt">IMU, LoRa, GPS.</p></a>
+    <a href="#comp-sensors" class="card clickable"><h3 data-i="card_sens_title">Bar100 + Celsius</h3><p data-i="card_sens_txt">Profundidad 1000 m y temperatura.</p></a>
+  </div>
+</section>
+
+<section class="section reveal" id="components">
+  <h2 data-i="comp_title">Componentes</h2>
+  <div id="comp-camera" class="card"><h3 data-i="comp_cam_h">Sony IMX678 4K</h3><img src="assets/camara.jpg" alt="IMX678"></div>
+  <div id="comp-tbeam" class="card"><h3 data-i="comp_tb_h">T-Beam S3 Supreme</h3><img src="assets/T-beam supreme.png" alt="T-Beam S3 Supreme"></div>
+  <div id="comp-sensors" class="card"><h3 data-i="comp_sens_h">Bar100 + Celsius</h3><img src="assets/sensores.jpg" alt="Bar100 y Celsius"></div>
+</section>
+
+<section class="section reveal" id="videos">
+  <h2 data-i="vid_title">Vídeos</h2>
+  <div class="grid cols-3">
+    <div class="card"><h3 data-i="vid_ext">Animación externa</h3><video src="assets/external.mp4" controls></video></div>
+    <div class="card"><h3 data-i="vid_int">Animación interna</h3><video src="assets/internal.mp4" controls></video></div>
+    <div class="card"><h3 data-i="vid_imu">Demo IMU</h3><video src="assets/imu1.mp4" controls></video></div>
+  </div>
+</section>
+
+<section class="section reveal" id="assembly">
+  <h2 data-i="asm_title">Despiece</h2>
+  <div class="card"><video src="assets/limulus_explosion.mp4" controls></video></div>
+</section>
+
+<section class="section reveal" id="credits">
+  <h2 data-i="cred_title">Créditos</h2>
+  <div class="credits">
+    <a href="https://medusaiot.org" target="_blank"><img src="assets/medusa_chip.gif" alt="Medusa IoT"></a>
+    <a href="https://circe.info" target="_blank"><img src="assets/circe.png" alt="CIRCE"></a>
+    <a href="https://www.loroparque.com/fundacion" target="_blank"><img src="assets/loroparque.jpg" alt="Loro Parque"></a>
+    <a href="https://oceansecrets.es/" target="_blank"><img src="assets/oceansecrets1.png" alt="Ocean Secrets"></a>
+  </div>
+</section>
+
+<footer class="footer"><small>© 2025 Limulus Cam-Tag</small></footer>
+
+<div class="lightbox" id="lightbox"><div class="lightbox-content"></div></div>
+
+<script>
+// --- Navegación y reveal ---
+document.querySelectorAll('.nav a').forEach(a=>{
+  a.addEventListener('click',e=>{
+    e.preventDefault();
+    document.querySelectorAll('.nav a').forEach(x=>x.classList.remove('active'));
+    a.classList.add('active');
+    document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+  });
+});
+const io=new IntersectionObserver(es=>{
+  es.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show'); });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// --- Lightbox en secciones clave ---
+const lb=document.getElementById('lightbox');
+const lbContent=lb.querySelector('.lightbox-content');
+document.querySelectorAll('#overview img,#components img,#videos video,#assembly video').forEach(el=>{
+  el.style.cursor='zoom-in';
+  el.addEventListener('click',()=>{
+    lbContent.innerHTML = el.tagName==='VIDEO'
+      ? `<video src="${el.currentSrc||el.src}" controls autoplay style="max-height:90vh"></video>`
+      : `<img src="${el.src}" alt="" style="max-height:90vh">`;
+    lb.classList.add('show');
+  });
+});
+lb.addEventListener('click',()=>lb.classList.remove('show'));
+
+// --- I18N simple ---
+const dict = {
+  es:{
+    brand:"Limulus Cam-Tag",
+    nav_overview:"Proyecto", nav_components:"Componentes", nav_videos:"Vídeos", nav_assembly:"Despiece", nav_credits:"Créditos",
+    hero_title:"Marca de ventosas para cetáceos",
+    hero_sub:"Sistema no invasivo con cámara 4K Sony IMX678, LilyGO T-Beam S3 Supreme, sensores y carcasa BlueRobotics 3\".",
+    hero_cta_primary:"Explorar componentes", hero_cta_secondary:"Ver vídeos",
+    ov_title:"Descripción del proyecto",
+    ov_lead:"Sistema avanzado para la monitorización no invasiva de cetáceos con sensores de profundidad, aceleración y temperatura, transmisión LoRa y diseño optimizado junto a CIRCE. Licencia Creative Commons para fomentar ciencia abierta.",
+    ov_body:[
+      "<strong>Resumen científico:</strong> integración de sensores (profundidad, aceleración, temperatura) con telemetría LoRa en plataformas Arduino/ESP32 para datos abiertos y reproducibles.",
+      "<strong>Colaboración CIRCE:</strong> optimización de precisión, autonomía y robustez en condiciones marinas.",
+      "<ul style='margin:.2em 0 0 1.1em'>"+
+        "<li><strong>Fase 1 – Prototipo y validación:</strong> pruebas de campo; métricas LoRa SNR, drift IMU y consumo.</li>"+
+        "<li><strong>Fase 2 – Optimización:</strong> eficiencia energética, sellado e integración mecánica/EMI.</li>"+
+        "<li><strong>Fase 3 – Piloto y divulgación:</strong> despliegue multi–especie y publicación de datasets abiertos.</li>"+
+      "</ul>",
+      "Diseño no invasivo para minimizar estrés animal y apoyar decisiones de conservación basadas en evidencia."
+    ],
+    card_cam_title:"IMX678 4K", card_cam_txt:"Cámara 4K · 60 fps.",
+    card_board_title:"T-Beam S3 Supreme", card_board_txt:"IMU, LoRa, GPS.",
+    card_sens_title:"Bar100 + Celsius", card_sens_txt:"Profundidad 1000 m y temperatura.",
+    comp_title:"Componentes",
+    comp_cam_h:"Sony IMX678 4K", comp_tb_h:"T-Beam S3 Supreme", comp_sens_h:"Bar100 + Celsius",
+    vid_title:"Vídeos", vid_ext:"Animación externa", vid_int:"Animación interna", vid_imu:"Demo IMU",
+    asm_title:"Despiece",
+    cred_title:"Créditos"
+  },
+  en:{
+    brand:"Limulus Cam-Tag",
+    nav_overview:"Overview", nav_components:"Components", nav_videos:"Videos", nav_assembly:"Exploded", nav_credits:"Credits",
+    hero_title:"Suction-cup tag for cetaceans",
+    hero_sub:"Non-invasive system with Sony IMX678 4K camera, LilyGO T-Beam S3 Supreme, sensors and BlueRobotics 3\" housing.",
+    hero_cta_primary:"Explore components", hero_cta_secondary:"Watch videos",
+    ov_title:"Project Overview",
+    ov_lead:"Advanced non-invasive cetacean monitoring with depth, acceleration and temperature sensing, LoRa telemetry and a design optimized with CIRCE. Creative Commons license to promote open science.",
+    ov_body:[
+      "<strong>Scientific summary:</strong> depth, acceleration and temperature sensing with LoRa telemetry on Arduino/ESP32 for open, reproducible data.",
+      "<strong>CIRCE partnership:</strong> optimization for accuracy, energy autonomy and robustness under marine conditions.",
+      "<ul style='margin:.2em 0 0 1.1em'>"+
+        "<li><strong>Phase 1 – Prototype & validation:</strong> field tests; LoRa SNR, IMU drift and power metrics.</li>"+
+        "<li><strong>Phase 2 – Optimization:</strong> energy efficiency, sealing, and mechanical/EMI integration.</li>"+
+        "<li><strong>Phase 3 – Pilot & outreach:</strong> multi-species deployment and open dataset publication.</li>"+
+      "</ul>",
+      "Non-invasive design to minimize animal stress and enable evidence-based conservation."
+    ],
+    card_cam_title:"IMX678 4K", card_cam_txt:"4K camera · 60 fps.",
+    card_board_title:"T-Beam S3 Supreme", card_board_txt:"IMU, LoRa, GPS.",
+    card_sens_title:"Bar100 + Celsius", card_sens_txt:"1000 m depth and temperature.",
+    comp_title:"Components",
+    comp_cam_h:"Sony IMX678 4K", comp_tb_h:"T-Beam S3 Supreme", comp_sens_h:"Bar100 + Celsius",
+    vid_title:"Videos", vid_ext:"External animation", vid_int:"Internal animation", vid_imu:"IMU demo",
+    asm_title:"Exploded",
+    cred_title:"Credits"
+  }
+};
+
+// Rellena textos
+function applyLang(lang){
+  document.documentElement.lang = (lang==='en'?'en':'es');
+  // elementos con data-i
+  document.querySelectorAll('[data-i]').forEach(el=>{
+    const k=el.getAttribute('data-i');
+    if(dict[lang][k]!==undefined) el.innerHTML = dict[lang][k];
+  });
+  // cuerpo multilínea de overview
+  const body = document.getElementById('ov_body');
+  body.innerHTML = (dict[lang].ov_body||[]).map(p=>`<p>${p}</p>`).join('');
+  // botones activos
+  document.getElementById('lang-es').classList.toggle('active', lang==='es');
+  document.getElementById('lang-en').classList.toggle('active', lang==='en');
+}
+document.getElementById('lang-es').onclick=()=>applyLang('es');
+document.getElementById('lang-en').onclick=()=>applyLang('en');
+applyLang('es');
+</script>
+</body>
+</html>

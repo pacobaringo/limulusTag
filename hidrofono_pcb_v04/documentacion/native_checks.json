@@ -1,0 +1,97 @@
+{
+  "kicad": "9.0.9",
+  "pads": 24,
+  "nets": 5,
+  "vias": [
+    {
+      "x": 93.9,
+      "y": 100.25,
+      "drill": 0.3,
+      "diameter": 0.6
+    },
+    {
+      "x": 97.85,
+      "y": 95.5,
+      "drill": 0.3,
+      "diameter": 0.6
+    },
+    {
+      "x": 98.2,
+      "y": 97.0,
+      "drill": 0.3,
+      "diameter": 0.6
+    },
+    {
+      "x": 95.5,
+      "y": 104.2,
+      "drill": 0.3,
+      "diameter": 0.6
+    },
+    {
+      "x": 105.4,
+      "y": 94.0,
+      "drill": 0.3,
+      "diameter": 0.6
+    },
+    {
+      "x": 102.7,
+      "y": 96.65,
+      "drill": 0.3,
+      "diameter": 0.6
+    },
+    {
+      "x": 93.9,
+      "y": 102.15,
+      "drill": 0.3,
+      "diameter": 0.6
+    },
+    {
+      "x": 103.0,
+      "y": 102.8,
+      "drill": 0.3,
+      "diameter": 0.6
+    },
+    {
+      "x": 100.9375,
+      "y": 94.6,
+      "drill": 0.3,
+      "diameter": 0.6
+    },
+    {
+      "x": 103.0,
+      "y": 100.4,
+      "drill": 0.3,
+      "diameter": 0.6
+    },
+    {
+      "x": 101.7,
+      "y": 99.95,
+      "drill": 0.3,
+      "diameter": 0.6
+    },
+    {
+      "x": 103.2,
+      "y": 101.5,
+      "drill": 0.3,
+      "diameter": 0.6
+    },
+    {
+      "x": 100.55,
+      "y": 96.1,
+      "drill": 0.3,
+      "diameter": 0.6
+    },
+    {
+      "x": 101.7,
+      "y": 98.05,
+      "drill": 0.3,
+      "diameter": 0.6
+    }
+  ],
+  "terminal_PTH": 5,
+  "anchor_NPTH": 2,
+  "J1_J2_H1_H2_preserved": true,
+  "copper_edge_minimum_mm": 0.75,
+  "C3_DNP": true,
+  "schematic_board_netlist_match": true
+}

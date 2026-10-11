@@ -1,0 +1,11 @@
+{
+  "top_copper_edge_raster_mm": 0.9039,
+  "top_via_mask_openings": 14,
+  "bottom_copper_edge_raster_mm": 0.7902,
+  "bottom_via_mask_openings": 14,
+  "drill_counts_by_diameter_mm": {
+    "0.3": 14,
+    "0.9": 5,
+    "1.2": 2
+  }
+}

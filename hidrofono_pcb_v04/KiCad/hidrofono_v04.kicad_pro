@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "filename": "hidrofono_v04.kicad_pro",
+    "version": 1
+  },
+  "board": {
+    "design_settings": {
+      "rules": {
+        "min_clearance": 0.2,
+        "min_track_width": 0.25,
+        "min_via_diameter": 0.6,
+        "min_through_hole_diameter": 0.3,
+        "min_copper_edge_clearance": 0.75,
+        "min_hole_to_hole": 0.25,
+        "solder_mask_clearance": 0.05,
+        "solder_mask_min_width": 0.1,
+        "min_silk_text_height": 0.7,
+        "min_silk_text_thickness": 0.12,
+        "silk_clearance": 0.1,
+        "min_text_height": 0.7,
+        "min_text_thickness": 0.12
+      },
+      "tent_vias": false
+    }
+  },
+  "net_settings": {
+    "classes": [
+      {
+        "name": "Default",
+        "clearance": 0.2,
+        "track_width": 0.25,
+        "via_diameter": 0.6,
+        "via_drill": 0.3,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "diff_pair_width": 0.25,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "wire_width": 6,
+        "bus_width": 12
+      }
+    ],
+    "version": 3
+  }
+}

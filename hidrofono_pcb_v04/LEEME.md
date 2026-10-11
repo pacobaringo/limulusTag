@@ -1,12 +1,12 @@
 # Hidrófono PIP v0.4 - cápsula maciza
 
-Abrir `KiCad/hidrofono_v04.kicad_pro` con KiCad 9 o posterior. Símbolos y huellas locales incluidos. Leer `guia_pcb_hidrofono_v04.pdf` antes de montar. Los SVG/PNG son vistas de consulta, no archivos de fabricación.
+Abrir `KiCad/hidrofono_v04.kicad_pro` con KiCad 9 o posterior. Símbolos y huellas locales incluidos. Esquema en PDF: `documentacion/esquema_hidrofono_v04.pdf`. Ilustración de conexiones: `documentacion/conexiones_v04.pdf`. Leer `guia_pcb_hidrofono_v04.pdf` antes de montar. Los SVG/PNG son vistas de consulta, no archivos de fabricación.
 
 ## Fabricación y montaje
 Subir únicamente `hidrofono_v04_Gerber.zip` al fabricante: siete capas Gerber y Excellon PTH/NPTH. Placa Ø20 mm, FR4 1,0 mm, dos caras, 1 oz. Vías SIN tapar, sin relleno de fábrica; máscaras abiertas en ambas caras. Retiro de cobre ≥0,75 mm. Sin ensamblaje automático; montar manualmente según BOM.csv. C1 y C2 se montan; C3/Cpar NO se monta por defecto. JP1 no existe.
 
 ## Conexiones
-J1.1 PIEZO_IN al electrodo interior; J1.2 PIEZO_GND al exterior (red GND). J2.1 MIC al vivo del cable; J2.2 GND a malla. J3.1 GND_AGUA a hilo MACIZO con paso sellado y extremo en contacto con agua. TP1 mide SOURCE. No hay batería ni ADC en esta placa. Mantener cortos los hilos de la cerámica y elegir longitud/cubierta PU del cable según la aplicación. H1/H2 son anclajes NPTH; no sustituyen un alivio de tracción.
+J1.1 PIEZO_IN al electrodo interior; J1.2 PIEZO_GND al exterior (red GND). Atención: la serigrafía «PIEZO_GND / PIEZO_IN» bajo J1 está en orden inverso al de los pads; el pad superior (junto a R1) es J1.1 PIEZO_IN. J2.1 MIC al vivo del cable; J2.2 GND a malla. J3.1 GND_AGUA a hilo MACIZO con paso sellado y extremo en contacto con agua. TP1 mide SOURCE. No hay batería ni ADC en esta placa. Mantener cortos los hilos de la cerámica y elegir longitud/cubierta PU del cable según la aplicación. H1/H2 son anclajes NPTH; no sustituyen un alivio de tracción.
 
 AudioMoth TRS: punta MIC, cuerpo GND, anillo libre. Para iPhone, usar en superficie TRS→TRRS CTIA y adaptador Apple con entrada de micrófono: cuerpo TRRS MIC, segundo anillo GND. Medir alimentación, detección y señal del receptor real antes de encapsular.
 

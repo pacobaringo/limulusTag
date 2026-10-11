@@ -21,3 +21,8 @@ Discrepancias menores, sin efecto eléctrico:
 - No se pueden comprobar las posiciones heredadas de la v0.3 (J1, J2, H1, H2) ni la estructura de la guía v0.3: los archivos v0.3 no vienen en el zip, solo sus SHA‑256.
 
 Uso: `python3 clr.py ../../KiCad/hidrofono_v04.kicad_pcb .` (análogo para `pcb.py` y `schnet.py`); `python3 edge.py <gerber_cobre>`; `python3 mask2.py <gerber_mascara>`.
+
+## Esquema redibujado (2026-10-11)
+- `../generar_esquema.py` regenera el esquema con cables. La netlist de KiCad 7.0.11 (`kicad-cli sch export netlist`) coincide pin a pin con la netlist v0.4 anterior (24/24), y también con la que reconstruye `schnet.py` desde el archivo. Los 12 UUID de símbolo coinciden con las rutas de huella de la PCB.
+- No se ha podido ejecutar ERC: KiCad 7 no tiene ERC por línea de comandos y KiCad 9 no está disponible aquí. `../ERC_KiCad.txt` corresponde al dibujo anterior.
+- La serigrafía de J1 está en orden inverso (ver CHANGELOG). Se ha comprobado con las coordenadas de `gr_text` en el `.kicad_pcb`.

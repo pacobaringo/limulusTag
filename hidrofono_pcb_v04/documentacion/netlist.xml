@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <export version="E">
   <design>
-    <source>/workspace/scratch/51f039c05479/output/hidrofono_pcb_v04/KiCad/hidrofono_v04.kicad_sch</source>
-    <date>2026-10-11T17:37:22+0200</date>
-    <tool>Eeschema 9.0.9-9.0.9~ubuntu24.04.1</tool>
+    <source>KiCad/hidrofono_v04.kicad_sch</source>
+    <date>Sun Oct 11 18:04:39 2026</date>
+    <tool>Eeschema 7.0.11+dfsg-1build4</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
         <title>Hidrofono PIP</title>
         <company>Medusa IoT</company>
         <rev>0.4-PCB</rev>
         <date/>
-        <source>hidrofono_v04.kicad_sch</source>
+        <source>KiCad/hidrofono_v04.kicad_sch</source>
         <comment number="1" value="Prototipo pendiente de ensayo"/>
         <comment number="2" value=""/>
         <comment number="3" value=""/>
@@ -28,12 +28,9 @@
       <value>22u / 16V / X5R</value>
       <footprint>hidrofono:C1</footprint>
       <fields>
-        <field name="Manufacturer">TDK</field>
         <field name="MPN">C3216X5R1C226M160AB</field>
+        <field name="Manufacturer">TDK</field>
         <field name="Mount">Si</field>
-        <field name="Footprint">hidrofono:C1</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
       </fields>
       <libsource lib="Hydro" part="C" description=""/>
       <property name="Manufacturer" value="TDK"/>
@@ -48,12 +45,9 @@
       <value>47p / 50V / C0G</value>
       <footprint>hidrofono:C2</footprint>
       <fields>
-        <field name="Manufacturer">KEMET</field>
         <field name="MPN">C0603C470J5GACTU</field>
+        <field name="Manufacturer">KEMET</field>
         <field name="Mount">Si</field>
-        <field name="Footprint">hidrofono:C2</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
       </fields>
       <libsource lib="Hydro" part="C" description=""/>
       <property name="Manufacturer" value="KEMET"/>
@@ -69,12 +63,8 @@
       <footprint>hidrofono:C3</footprint>
       <fields>
         <field name="Alias">Cpar</field>
-        <field name="Manufacturer"/>
         <field name="MPN">Por seleccionar tras ensayo</field>
         <field name="Mount">No (DNP)</field>
-        <field name="Footprint">hidrofono:C3</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
       </fields>
       <libsource lib="Hydro" part="C" description=""/>
       <property name="Alias" value="Cpar"/>
@@ -91,12 +81,9 @@
       <value>BAV199-7-F</value>
       <footprint>hidrofono:D1</footprint>
       <fields>
-        <field name="Manufacturer">Diodes Incorporated</field>
         <field name="MPN">BAV199-7-F</field>
+        <field name="Manufacturer">Diodes Incorporated</field>
         <field name="Mount">Si</field>
-        <field name="Footprint">hidrofono:D1</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
       </fields>
       <libsource lib="Hydro" part="DIODE" description=""/>
       <property name="Manufacturer" value="Diodes Incorporated"/>
@@ -110,11 +97,6 @@
     <comp ref="J1">
       <value>1 PIEZO_IN / 2 PIEZO_GND</value>
       <footprint>hidrofono:J1</footprint>
-      <fields>
-        <field name="Footprint">hidrofono:J1</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
       <libsource lib="Hydro" part="CONN" description=""/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="hidrofono_v04.kicad_sch"/>
@@ -124,11 +106,6 @@
     <comp ref="J2">
       <value>CABLE</value>
       <footprint>hidrofono:J2</footprint>
-      <fields>
-        <field name="Footprint">hidrofono:J2</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
       <libsource lib="Hydro" part="CONN" description=""/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="hidrofono_v04.kicad_sch"/>
@@ -138,11 +115,6 @@
     <comp ref="J3">
       <value>GND_AGUA</value>
       <footprint>hidrofono:J3</footprint>
-      <fields>
-        <field name="Footprint">hidrofono:J3</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
       <libsource lib="Hydro" part="GND_WATER" description=""/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="hidrofono_v04.kicad_sch"/>
@@ -153,12 +125,9 @@
       <value>2SK209-Y</value>
       <footprint>hidrofono:Q1</footprint>
       <fields>
-        <field name="Manufacturer">Toshiba</field>
         <field name="MPN">2SK209-Y(TE85L,F)</field>
+        <field name="Manufacturer">Toshiba</field>
         <field name="Mount">Si</field>
-        <field name="Footprint">hidrofono:Q1</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
       </fields>
       <libsource lib="Hydro" part="JFET" description=""/>
       <property name="Manufacturer" value="Toshiba"/>
@@ -173,12 +142,9 @@
       <value>220 / 1% / thin film</value>
       <footprint>hidrofono:R1</footprint>
       <fields>
-        <field name="Manufacturer">YAGEO</field>
         <field name="MPN">RT1206FRE07220RL</field>
+        <field name="Manufacturer">YAGEO</field>
         <field name="Mount">Si</field>
-        <field name="Footprint">hidrofono:R1</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
       </fields>
       <libsource lib="Hydro" part="R" description=""/>
       <property name="Manufacturer" value="YAGEO"/>
@@ -193,12 +159,9 @@
       <value>4.7M</value>
       <footprint>hidrofono:R2</footprint>
       <fields>
-        <field name="Manufacturer">YAGEO</field>
         <field name="MPN">RC1206FR-074M7L</field>
+        <field name="Manufacturer">YAGEO</field>
         <field name="Mount">Si</field>
-        <field name="Footprint">hidrofono:R2</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
       </fields>
       <libsource lib="Hydro" part="R" description=""/>
       <property name="Manufacturer" value="YAGEO"/>
@@ -213,12 +176,9 @@
       <value>750 / 1%</value>
       <footprint>hidrofono:R3</footprint>
       <fields>
-        <field name="Manufacturer">YAGEO</field>
         <field name="MPN">RC1206FR-07750RL</field>
+        <field name="Manufacturer">YAGEO</field>
         <field name="Mount">Si</field>
-        <field name="Footprint">hidrofono:R3</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
       </fields>
       <libsource lib="Hydro" part="R" description=""/>
       <property name="Manufacturer" value="YAGEO"/>
@@ -232,11 +192,6 @@
     <comp ref="TP1">
       <value>SOURCE</value>
       <footprint>hidrofono:TP1</footprint>
-      <fields>
-        <field name="Footprint">hidrofono:TP1</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
       <libsource lib="Hydro" part="TP" description=""/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="hidrofono_v04.kicad_sch"/>
@@ -249,9 +204,6 @@
       <fields>
         <field name="Reference">C</field>
         <field name="Value">C</field>
-        <field name="Footprint"/>
-        <field name="Datasheet"/>
-        <field name="Description"/>
       </fields>
       <pins>
         <pin num="1" name="1" type="passive"/>
@@ -262,9 +214,6 @@
       <fields>
         <field name="Reference">J</field>
         <field name="Value">CONN</field>
-        <field name="Footprint"/>
-        <field name="Datasheet"/>
-        <field name="Description"/>
       </fields>
       <pins>
         <pin num="1" name="1" type="passive"/>
@@ -275,9 +224,6 @@
       <fields>
         <field name="Reference">D</field>
         <field name="Value">DIODE</field>
-        <field name="Footprint"/>
-        <field name="Datasheet"/>
-        <field name="Description"/>
       </fields>
       <pins>
         <pin num="1" name="A1" type="passive"/>
@@ -289,9 +235,6 @@
       <fields>
         <field name="Reference">J</field>
         <field name="Value">GND_WATER</field>
-        <field name="Footprint"/>
-        <field name="Datasheet"/>
-        <field name="Description"/>
       </fields>
       <pins>
         <pin num="1" name="GND_AGUA" type="passive"/>
@@ -301,9 +244,6 @@
       <fields>
         <field name="Reference">Q</field>
         <field name="Value">JFET</field>
-        <field name="Footprint"/>
-        <field name="Datasheet"/>
-        <field name="Description"/>
       </fields>
       <pins>
         <pin num="1" name="S" type="passive"/>
@@ -315,9 +255,6 @@
       <fields>
         <field name="Reference">R</field>
         <field name="Value">R</field>
-        <field name="Footprint"/>
-        <field name="Datasheet"/>
-        <field name="Description"/>
       </fields>
       <pins>
         <pin num="1" name="1" type="passive"/>
@@ -328,9 +265,6 @@
       <fields>
         <field name="Reference">TP</field>
         <field name="Value">TP</field>
-        <field name="Footprint"/>
-        <field name="Datasheet"/>
-        <field name="Description"/>
       </fields>
       <pins>
         <pin num="1" name="S" type="passive"/>
@@ -339,17 +273,17 @@
   </libparts>
   <libraries>
     <library logical="Hydro">
-      <uri>/workspace/scratch/51f039c05479/output/hidrofono_pcb_v04/KiCad/hidrofono.kicad_sym</uri>
+      <uri>/home/user/limulusTag/hidrofono_pcb_v04/KiCad/hidrofono.kicad_sym</uri>
     </library>
   </libraries>
   <nets>
-    <net code="1" name="/GATE" class="Default">
+    <net code="1" name="/GATE">
       <node ref="D1" pin="3" pinfunction="K1/A2" pintype="passive"/>
       <node ref="Q1" pin="3" pinfunction="G" pintype="passive"/>
       <node ref="R1" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="R2" pin="1" pinfunction="1" pintype="passive"/>
     </net>
-    <net code="2" name="/GND" class="Default">
+    <net code="2" name="/GND">
       <node ref="C1" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="C2" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="C3" pin="2" pinfunction="2" pintype="passive"/>
@@ -361,17 +295,17 @@
       <node ref="R2" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="R3" pin="2" pinfunction="2" pintype="passive"/>
     </net>
-    <net code="3" name="/MIC" class="Default">
+    <net code="3" name="/MIC">
       <node ref="C2" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="J2" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="Q1" pin="2" pinfunction="D" pintype="passive"/>
     </net>
-    <net code="4" name="/PIEZO_IN" class="Default">
+    <net code="4" name="/PIEZO_IN">
       <node ref="C3" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="J1" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="R1" pin="1" pinfunction="1" pintype="passive"/>
     </net>
-    <net code="5" name="/SOURCE" class="Default">
+    <net code="5" name="/SOURCE">
       <node ref="C1" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="Q1" pin="1" pinfunction="S" pintype="passive"/>
       <node ref="R3" pin="1" pinfunction="1" pintype="passive"/>

@@ -1,0 +1,1 @@
+(fp_lib_table (lib (name "hidrofono")(type "KiCad")(uri "${KIPRJMOD}/hidrofono.pretty")(options "")(descr "Huellas v0.4 incluidas")))

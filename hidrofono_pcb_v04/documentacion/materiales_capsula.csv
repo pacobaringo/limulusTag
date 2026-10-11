@@ -1,0 +1,7 @@
+﻿Elemento,Cantidad,Requisito,Estado
+JLI-PZ001,1,Electrodo interior a PIEZO_IN; exterior a GND,Adquirir
+PCB v0.4,1,"FR4 1mm, Ø20mm, dos caras",Gerber incluido
+Cable,Longitud segun aplicacion,"Cubierta PU; impedancia, capacidad y caida DC a medir",Por seleccionar
+Hilo GND_AGUA,1,"MACIZO, no trenzado; union sellada y extremo en contacto con agua",Por seleccionar
+Poliuretano,Segun molde,"Baja viscosidad, adhesivo y compatible con agua y materiales; proceso sin burbujas",Formulacion y proceso por validar
+Soldadura,Segun montaje,Sn62Pb36Ag2; contacto breve sobre electrodos plateados,Adquirir

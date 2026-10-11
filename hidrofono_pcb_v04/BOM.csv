@@ -1,0 +1,9 @@
+﻿Referencia,Cantidad_por_PCB,Valor,Fabricante,MPN,Encapsulado,Montar,Observaciones
+Q1,1,2SK209-Y,Toshiba,"2SK209-Y(TE85L,F)",SC-59 / SOT-23,Si,"Grado Y; 1=S, 2=D, 3=G"
+D1,1,Doble diodo de baja fuga,Diodes Incorporated,BAV199-7-F,SOT-23,Si,1=A1 y 2=K2 a GND; 3=K1/A2 a GATE
+R1,1,220 ohm 1% thin film 0.25W,YAGEO,RT1206FRE07220RL,1206,Si,Pelicula fina
+R2,1,4.7 Mohm 1% 0.25W,YAGEO,RC1206FR-074M7L,1206,Si,Referencia de puerta
+R3,1,750 ohm 1% 0.25W,YAGEO,RC1206FR-07750RL,1206,Si,Autopolarizacion
+C1,1,22 uF X5R 16V +/-20%,TDK,C3216X5R1C226M160AB,1206,Si,MLCC no polar; permanente SOURCE-GND
+C2,1,47 pF C0G 50V +/-5%,KEMET,C0603C470J5GACTU,0603,Si,MIC-GND; cerca de Q1
+C3,1,Cpar C0G; valor por definir,,Por seleccionar tras ensayo,1206,No (DNP),En paralelo PIEZO_IN-GND; alias Cpar

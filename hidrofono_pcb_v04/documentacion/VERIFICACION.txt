@@ -1,0 +1,45 @@
+VERIFICACION - HIDROFONO PIP v0.4
+Fecha: 2026-10-11
+
+1. KiCad 9.0.9
+ERC: 0 errores y 0 avisos.
+DRC: 0 errores y 0 avisos; 0 pads sin conectar; 0 problemas de paridad.
+Informes completos: ERC_KiCad.txt, DRC_KiCad.txt. Sin exclusiones.
+
+2. Comparacion nativa de esquema, netlist y PCB
+24 pads con numero; 5 redes: PIEZO_IN, GATE, SOURCE, MIC, GND.
+Coincidencia exacta ref/pin/red entre netlist y PCB y con la conectividad requerida.
+C1 permanente SOURCE-GND; C2 MIC-GND; C3/Cpar PIEZO_IN-GND, DNP.
+No existe JP1 ni CAP_POS. Q1: 1 SOURCE, 2 MIC, 3 GATE.
+D1: 1 y 2 GND, 3 GATE.
+J1/J2: posiciones y taladros conservados respecto a v0.3.
+H1/H2: posiciones y taladros NPTH conservados respecto a v0.3.
+Contorno circular de radio 10 mm; FR4 1,0 mm.
+Regla de distancia cobre-borde: 0,75 mm, ambas caras; plano B.Cu radio 9,20 mm.
+14 vias: diameter 0,60 mm / taladro 0,30 mm; sin tenting en F.Mask y B.Mask.
+5 terminales PTH de 0,90 mm, 2 anclajes NPTH de 1,20 mm.
+Ver mapa_pads.csv, conexiones.json y native_checks.json.
+
+3. Fabricacion, leida desde los Gerber/Excellon con Gerbonara 1.6.3
+7 capas: F.Cu, B.Cu, F.Mask, B.Mask, F.Silkscreen, B.Silkscreen, Edge.Cuts.
+Taladros PTH/NPTH: exactamente 14 x 0,30 mm, 5 x 0,90 mm y 2 x 1,20 mm.
+14 aperturas de mascara verificadas en cada cara, en centro y a radio 0,25 mm.
+Raster 1400 x 1400, campo 21 mm: retiro minimo de cobre estimado
+F.Cu = 0.9039 mm; B.Cu = 0.7902 mm. Comprobacion aproximada independiente;
+la validacion geometrica principal corresponde al DRC nativo (regla 0,75 mm).
+Ver gerber_raster_checks.json y las dos vistas PNG/SVG.
+Gerbonara emite un SyntaxWarning por G90 tras fin de cabecera Excellon KiCad;
+interpreta unidades, herramientas y coordenadas correctamente. No es un error DRC.
+
+4. Guia
+4 paginas, conservando estructura v0.3. Todas renderizadas y revisadas visualmente.
+Nominales DC 3 V / 2,7 kohm: S 0,30 V, MIC 1,92 V, ID 0,40 mA.
+Ganancia -4,4 para carga AC 1,1 kohm; no son limites de aceptacion.
+Electrodos, cable PU, hilo de agua macizo, Sn62Pb36Ag2 y llenado sin aire documentados.
+
+5. Limites de esta entrega
+Comprobaciones de archivos; no se han fabricado ni probado unidades fisicas.
+Sin medida de ruido, sensibilidad, respuesta, proteccion, compatibilidad Apple
+ni ensayo de presion. 1000 m es objetivo de desarrollo, no aptitud certificada.
+El llenado macizo precisa validar PU, adhesion, ausencia de aire, MLCC,
+ceramica, uniones y cable. Ver guia para ensayos posteriores.
